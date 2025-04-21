@@ -5,19 +5,18 @@ This project aims to fine-tune [IndicTrans2](https://huggingface.co/ai4bharat/in
 ---
 ##  Table of Contents
 
-- [ Project Summary](#-project-summary)
-- [ Dataset](#-dataset)
-- [ System Setup: Google Cloud + Jupyter Notebook](#-system-setup-google-cloud--jupyter-notebook)
-  - [ Google Cloud VM Specs](#-google-cloud-vm-specs)
-  - [ One-Time Setup (Inside VM)](#-one-time-setup-inside-vm)
-  - [ Installing Project Dependencies](#-installing-project-dependencies)
-- [ Project Structure](#-project-structure)
-- [ Full Project Files (Google Drive)](#-full-project-files-google-drive)
-- [ Results](#-results)
-  - [ English → Telugu Results](#-english--telugu-results)
-  - [ English → Hindi Results](#-english--hindi-results)
-- [ Metrics – Scores](#-metrics--scores)
-- [ Summary Notes](#-summary-notes)
+- [Project Summary](#project-summary)
+- [Dataset](#dataset)
+- [System Setup: Google Cloud + Jupyter Notebook](#system-setup-google-cloud--jupyter-notebook)
+  - [Google Cloud VM Specs](#google-cloud-vm-specs)
+  - [One-Time Setup (Inside VM)](#one-time-setup-inside-vm)
+- [Project Structure](#project-structure)
+- [Full Project Files (Google Drive)](#full-project-files-google-drive)
+- [Results](#results)
+  - [English → Telugu Results](#english--telugu-results)
+  - [English → Hindi Results](#english--hindi-results)
+- [Metrics- Scores](#metrics--scores)
+- [Summary Notes](#summary-notes)
 
 ##  Project Summary
 
