@@ -1,4 +1,4 @@
-#  IndicTrans2 Fine-Tuning: English-Hindi and English-Telugu Translation
+#  Transformer-Based Machine Translation for High-Resource Indian Languages
 
 This project aims to fine-tune [IndicTrans2](https://huggingface.co/ai4bharat/indictrans2-en-hi) for two high-resource Indian language pairs: **English-Hindi** and **English-Telugu**, using a 15,000-sentence subset (compute constraint) of the [Samanantar](https://www.kaggle.com/datasets/mathurinache/samanantar) corpus.
 
