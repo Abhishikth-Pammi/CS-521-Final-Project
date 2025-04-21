@@ -3,6 +3,21 @@
 This project aims to fine-tune [IndicTrans2](https://huggingface.co/ai4bharat/indictrans2-en-hi) for two high-resource Indian language pairs: **English-Hindi** and **English-Telugu**, using a 15,000-sentence subset (compute constraint) of the [Samanantar](https://www.kaggle.com/datasets/mathurinache/samanantar) corpus.
 
 ---
+##  Table of Contents
+
+- [ Project Summary](#-project-summary)
+- [ Dataset](#-dataset)
+- [ System Setup: Google Cloud + Jupyter Notebook](#-system-setup-google-cloud--jupyter-notebook)
+  - [ Google Cloud VM Specs](#-google-cloud-vm-specs)
+  - [ One-Time Setup (Inside VM)](#-one-time-setup-inside-vm)
+  - [ Installing Project Dependencies](#-installing-project-dependencies)
+- [ Project Structure](#-project-structure)
+- [ Full Project Files (Google Drive)](#-full-project-files-google-drive)
+- [ Results](#-results)
+  - [ English → Telugu Results](#-english--telugu-results)
+  - [ English → Hindi Results](#-english--hindi-results)
+- [ Metrics – Scores](#-metrics--scores)
+- [ Summary Notes](#-summary-notes)
 
 ##  Project Summary
 
