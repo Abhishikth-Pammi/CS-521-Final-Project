@@ -116,13 +116,21 @@ exit
 │   ├── train.hi
 │   ├── en_hi_model.model
 │   └── en_hi_model.vocab
-
 ```
-# 📈 Results
+## 📁 Full Project Files (Google Drive)
+
+Due to GitHub’s file size limits, many large files (model weights, tokenized datasets, training artifacts) are not included in this repository.
+
+➡️ You can access **all project files and folders** here:  
+👉 [📂 Click to View on Google Drive](https://drive.google.com/drive/folders/1fRgCuYE4NnR_5zu-12BWBM-blpDe17wW?usp=share_link)
+
+
+
+## 📈 Results
 
 We used various metrics and visualizations to track our model's performance throughout the training and evaluation process. Below are the key results from our experiments with English → Hindi and English → Telugu translation pairs.
 
-## 🇮🇳 English → Telugu Results
+## 🇺🇸 English → 🇮🇳 Telugu Results
 
 ### Training Loss vs Steps
 Our training loss curve shows consistent improvement throughout the training process, demonstrating effective learning despite computational constraints.
@@ -131,64 +139,67 @@ Our training loss curve shows consistent improvement throughout the training pro
 
 
 ### BLEU Score vs Steps
-The BLEU score steadily increased during training, starting at approximately 10 and reaching 29.49 by the end of one epoch, showing continuous improvement in translation quality.
+The BLEU score steadily increased during training, showing continuous improvement in translation quality.
 
 ![output-3](https://github.com/user-attachments/assets/3ee2b351-baae-4506-9cd7-5c295ca3bd3a)
 
 
 
 ### BLEU Score Comparison
-While our fine-tuned model (29.49) shows lower BLEU than the pretrained IndicTrans2 (43.90), this is expected given our training limitations. The pretrained model was trained on millions of sentence pairs with substantially more computational resources.
+Our fine-tuned model achieved a BLEU score of 31.4 compared to IndicTrans2's 36.2. This relatively small gap despite our computational constraints suggests strong learning capabilities.
+
 ![output-4](https://github.com/user-attachments/assets/a34563f0-59d8-4f81-9952-9c1156a363d1)
 
 
 
 ### Bard Score Comparison
-Despite BLEU score differences, our model significantly outperforms Google Translate on human evaluation metrics, scoring 47.5 compared to Google's 22.5 on the Bard Score scale.
-![output-2](https://github.com/user-attachments/assets/1ba267eb-50a2-4615-a3ac-ae228750b6ad)
-
-
-
-### Attention Heatmap
-Visualization of the attention patterns shows how our model learns to align words between English and Hindi, with stronger weights on semantically related tokens.
-![output-5](https://github.com/user-attachments/assets/2738a2e7-40b4-43f7-adda-2543ca42f59a)
-
-
-
-## 🇮🇳 English → Hindi Results
-
-### Training Loss vs Steps
-The training loss for English-Telugu shows rapid initial decrease followed by consistent refinement throughout the epoch, demonstrating efficient learning.
-![output-6](https://github.com/user-attachments/assets/3ca73b2b-aad1-49a8-b4f4-bc53b47030f2)
-
-
-
-### BLEU Score vs Steps
-Telugu translation quality improved dramatically during training, with BLEU scores starting at 18 and reaching 31.4 by the end of training.
-![output-7](https://github.com/user-attachments/assets/e355bbb3-f85f-432b-8732-131478a5cfec)
-
-
-
-### BLEU Score Comparison
-Our fine-tuned model achieved a BLEU score of 31.4 compared to IndicTrans2's 36.2. This relatively small gap despite our computational constraints suggests strong transfer learning capabilities.
-![output-8](https://github.com/user-attachments/assets/515471a3-c415-48a8-b033-57b9c7a9f5ad)
-
-
-
-### Bard Score Comparison
 On human evaluation, our model significantly outperformed Google Translate, scoring 50.0 compared to Google's 22.5 on the Bard Score, demonstrating superior fluency and accuracy.
-![output-10](https://github.com/user-attachments/assets/a94e1a7b-8b74-4f34-a51f-5bb3254af18f)
+![output-2](https://github.com/user-attachments/assets/1ba267eb-50a2-4615-a3ac-ae228750b6ad)
 
 
 
 ### Attention Heatmap
 The attention visualization for Telugu shows interesting patterns reflecting the language's SOV structure and agglutinative nature, with particularly strong attention weights between semantically linked tokens.
 
+![output-5](https://github.com/user-attachments/assets/2738a2e7-40b4-43f7-adda-2543ca42f59a)
+
+
+
+## 🇺🇸 English → 🇮🇳 Hindi Results
+
+### Training Loss vs Steps
+The training loss for English-Hindi shows fluctuations throughout the epoch but decreased eventually, demonstrating efficient learning.
+![output-6](https://github.com/user-attachments/assets/3ca73b2b-aad1-49a8-b4f4-bc53b47030f2)
+
+
+
+### BLEU Score vs Steps
+Hindi translation quality improved steadily during training, with BLEU scores starting at 10 and reaching 29.49 by the end of training.
+![output-7](https://github.com/user-attachments/assets/e355bbb3-f85f-432b-8732-131478a5cfec)
+
+
+
+### BLEU Score Comparison
+While our fine-tuned model (29.49) shows lower BLEU than the pretrained IndicTrans2 (43.90), this is expected given our training limitations. The pretrained model was trained on millions of sentence pairs with substantially more computational resources.
+![output-8](https://github.com/user-attachments/assets/515471a3-c415-48a8-b033-57b9c7a9f5ad)
+
+
+
+### Bard Score Comparison
+Despite BLEU score differences, our model significantly outperforms Google Translate on human evaluation metrics, scoring 47.5 compared to Google's 22.5 on the Bard Score scale.
+
+![output-10](https://github.com/user-attachments/assets/a94e1a7b-8b74-4f34-a51f-5bb3254af18f)
+
+
+
+### Attention Heatmap
+Visualization of the attention patterns shows how our model learns to align words between English and Hindi, with stronger weights on semantically related tokens.
+
 ![Unknown](https://github.com/user-attachments/assets/2510e5b9-5223-410b-bd5a-f91957ce16e9)
 
 ## 📊 Metrics- Scores
 
-### 🇮🇳 English to Telugu (En → Te)
+### 🇺🇸 English → 🇮🇳 Telugu (En → Te)
 
 - **BLEU**: 31.4  
 - **COMET**: 0.72  
@@ -196,7 +207,7 @@ The attention visualization for Telugu shows interesting patterns reflecting the
 - **Bard Score**: 50  
 - **TER Score**: 41.75  
 
-### 🇮🇳 English to Hindi (En → Hi)
+### 🇺🇸 English → 🇮🇳 Hindi (En → Hi)
 
 - **BLEU**: 29.49  
 - **COMET**: 0.57  
