@@ -1,34 +1,34 @@
-# 🌐 IndicTrans2 Fine-Tuning: English-Hindi and English-Telugu Translation
+#  IndicTrans2 Fine-Tuning: English-Hindi and English-Telugu Translation
 
 This project aims to fine-tune [IndicTrans2](https://huggingface.co/ai4bharat/indictrans2-en-hi) for two high-resource Indian language pairs: **English-Hindi** and **English-Telugu**, using a 15,000-sentence subset (compute constraint) of the [Samanantar](https://www.kaggle.com/datasets/mathurinache/samanantar) corpus.
 
 ---
 
-## 📌 Project Summary
+##  Project Summary
 
 This project focuses on fine-tuning IndicTrans2 with aggressive memory optimizations on a **Google Cloud Platform VM**. The goal was to improve translation fluency and adequacy within **GPU-constrained environments**.
 
-### 🔹 Key Features:
+###  Key Features:
 
-- ✅ Trained with **15,000 sentence pairs** for each language pair.
-- ✅ Used **SentencePiece** tokenization for better subword coverage.
-- ✅ Performed training using Hugging Face’s `Seq2SeqTrainer` on:
+-  Trained with **15,000 sentence pairs** for each language pair.
+-  Used **SentencePiece** tokenization for better subword coverage.
+-  Performed training using Hugging Face’s `Seq2SeqTrainer` on:
   - **T4 GPU (16 GB VRAM)**
   - **30 GB RAM**
   - **120 GB SSD**
-- ✅ Leveraged 8-bit quantized model loading (`load_in_8bit=True`) for memory savings.
-- ✅ Evaluation conducted using:
+-  Leveraged 8-bit quantized model loading (`load_in_8bit=True`) for memory savings.
+-  Evaluation conducted using:
   - BLEU (SacreBLEU)
   - COMET
   - BERTScore
   - Bard Score (manual fluency/grammar/meaning)
 
-> ⚠️ BLEU scores were lower than base IndicTrans2 (almost close to base model in telugu) due to resource limits (1 epoch, batch size = 1).  
+>  BLEU scores were lower than base IndicTrans2 (almost close to base model in telugu) due to resource limits (1 epoch, batch size = 1).  
 > But **COMET, BERTScore, and human review** confirmed meaningful improvements — especially for Telugu, where the pretrained model struggled more.
 
 ---
 
-## 📚 Dataset
+##  Dataset
 
 - **Name:** [Samanantar](https://www.kaggle.com/datasets/mathurinache/samanantar)
 - **Size:** ~12 GB
@@ -36,22 +36,22 @@ This project focuses on fine-tuning IndicTrans2 with aggressive memory optimizat
 - **Domains:** Wikipedia, government sites, news portals
 
 Due to its size, the dataset is not included in this repo.  
-➡️ You can download it from: [Kaggle Dataset Link](https://www.kaggle.com/datasets/mathurinache/samanantar)
+➡ You can download it from: [Kaggle Dataset Link](https://www.kaggle.com/datasets/mathurinache/samanantar)
 
 ---
 
-## ⚙️ System Setup: Google Cloud + Jupyter Notebook
+##  System Setup: Google Cloud + Jupyter Notebook
 
 All experiments were run on a **GPU-enabled Google Cloud VM** using a Python virtual environment.
 
-### 💻 Google Cloud VM Specs:
+###  Google Cloud VM Specs:
 - GPU: NVIDIA Tesla T4 (16 GB VRAM)
 - RAM: 30 GB
 - Disk: 120 GB SSD
 
 ---
 
-### 🧪 One-Time Setup (Inside VM)
+###  One-Time Setup (Inside VM)
 
 ```bash
 # Install Python and venv if not available
@@ -66,8 +66,10 @@ source ~/jupyter_env/bin/activate
 
 # Install required packages
 pip install transformers datasets sentencepiece evaluate bitsandbytes accelerate jupyter
+pip install -r requirements.txt
 
-🔁 Steps to Run Each Time (Jupyter on GCP)
+
+ Steps to Run Each Time (Jupyter on GCP)
 # 1. Connect to VM from your Mac
 gcloud compute ssh main --zone=southamerica-east1-c
 
@@ -91,7 +93,7 @@ Ctrl+C
 exit
 ```
 
-### 📁 Project Structure
+###  Project Structure
 ```bash
 
 ├── Eng-Hin-Final.ipynb
@@ -117,20 +119,20 @@ exit
 │   ├── en_hi_model.model
 │   └── en_hi_model.vocab
 ```
-## 📁 Full Project Files (Google Drive)
+##  Full Project Files (Google Drive)
 
 Due to GitHub’s file size limits, many large files (model weights, tokenized datasets, training artifacts) are not included in this repository.
 
 ➡️ You can access **all project files and folders** here:  
-👉 [📂 Click to View on Google Drive](https://drive.google.com/drive/folders/1fRgCuYE4NnR_5zu-12BWBM-blpDe17wW?usp=share_link)
+-> [ Click to View on Google Drive](https://drive.google.com/drive/folders/1fRgCuYE4NnR_5zu-12BWBM-blpDe17wW?usp=share_link)
 
 
 
-## 📈 Results
+##  Results
 
 We used various metrics and visualizations to track our model's performance throughout the training and evaluation process. Below are the key results from our experiments with English → Hindi and English → Telugu translation pairs.
 
-## 🇺🇸 English → 🇮🇳 Telugu Results
+##  English →  Telugu Results
 
 ### Training Loss vs Steps
 Our training loss curve shows consistent improvement throughout the training process, demonstrating effective learning despite computational constraints.
@@ -165,7 +167,7 @@ The attention visualization for Telugu shows interesting patterns reflecting the
 
 
 
-## 🇺🇸 English → 🇮🇳 Hindi Results
+##  English →  Hindi Results
 
 ### Training Loss vs Steps
 The training loss for English-Hindi shows fluctuations throughout the epoch but decreased eventually, demonstrating efficient learning.
@@ -197,9 +199,9 @@ Visualization of the attention patterns shows how our model learns to align word
 
 ![Unknown](https://github.com/user-attachments/assets/2510e5b9-5223-410b-bd5a-f91957ce16e9)
 
-## 📊 Metrics- Scores
+##  Metrics- Scores
 
-### 🇺🇸 English → 🇮🇳 Telugu (En → Te)
+###  English →  Telugu (En → Te)
 
 - **BLEU**: 31.4  
 - **COMET**: 0.72  
@@ -207,7 +209,7 @@ Visualization of the attention patterns shows how our model learns to align word
 - **Bard Score**: 50  
 - **TER Score**: 41.75  
 
-### 🇺🇸 English → 🇮🇳 Hindi (En → Hi)
+###  English →  Hindi (En → Hi)
 
 - **BLEU**: 29.49  
 - **COMET**: 0.57  
@@ -224,12 +226,12 @@ Visualization of the attention patterns shows how our model learns to align word
 
 ## Summary Notes
 
-✅ These results were generated from one full epoch (15,000 steps) of training.
+ These results were generated from one full epoch (15,000 steps) of training.
 
-⚠️ While some pretrained baseline metrics (particularly BLEU) outperform our fine-tuned model due to compute constraints and our use of only a 15,000-sentence subset (∼1%) of the full Samanantar corpus, our **Bard Score** and **qualitative metrics** demonstrate meaningful improvements in translation quality — especially for English-Telugu.
+ While some pretrained baseline metrics (particularly BLEU) outperform our fine-tuned model due to compute constraints and our use of only a 15,000-sentence subset (∼1%) of the full Samanantar corpus, our **Bard Score** and **qualitative metrics** demonstrate meaningful improvements in translation quality — especially for English-Telugu.
 
-📈 Notably, for **English → Telugu**, our fine-tuned model **almost matched the BLEU score of IndicTrans2**, despite being trained on a drastically smaller dataset.  
-➡️ This suggests that with access to the full corpus, our model would likely **surpass the baseline**.
+ Notably, for **English → Telugu**, our fine-tuned model **almost matched the BLEU score of IndicTrans2**, despite being trained on a drastically smaller dataset.  
+-> This suggests that with access to the full corpus, our model would likely **surpass the baseline**.
 
-🔬 The stronger relative performance on Telugu also indicates that our fine-tuning approach is especially beneficial for **morphologically rich or less represented languages** in pretrained multilingual models.
+ The stronger relative performance on Telugu also indicates that our fine-tuning approach is especially beneficial for **morphologically rich or less represented languages** in pretrained multilingual models.
 
